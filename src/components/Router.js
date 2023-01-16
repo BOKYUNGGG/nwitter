@@ -8,13 +8,11 @@ import EditProfile from "../routes/EditProfile";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile";
 
-
-const useRouter = () => {
-    const [isLoggenIn, setIsLoggenIn] = useState(false)
+const useRouter = (isLoggedIn) => {
     const router = createBrowserRouter([
         {
           path: "/",
-          element: isLoggenIn ? <Home /> : <Auth />,
+          element: isLoggedIn ? <Home /> : <Auth />,
         },
         {
           path: "/edit-profile",
@@ -28,8 +26,8 @@ const useRouter = () => {
     return router
 }
 
-const Router = () => {
-    const router = useRouter()
+const Router = ({login}) => {
+    const router = useRouter(login)
     return(
         <RouterProvider router={router} />
     )

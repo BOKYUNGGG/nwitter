@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Router from './components/Router';
-import firebase from './firebase';
+import App from './components/App';
 
-console.log(firebase)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router />
+    <App />
   </React.StrictMode>
 );
